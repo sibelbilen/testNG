@@ -1,5 +1,6 @@
 package Gunluklerim;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -11,14 +12,15 @@ public class C01_TestingKonu_notu {
 2-@Before ve @after:5 before 5 after annotation bulunur.
 suite >tests>group >class>method
 3-@BeforeSuite: herbir test suitinden once bir kez  calisir.
-4@BeforeTest:herbir test oncesi bir kez calsiir
+4-@BeforeTest:herbir test oncesi bir kez calisiir
+5-
 
 
 
  */
-@BeforeTest
-public void beforeTest(){
-    System.out.println("beforetest her testten once calsiir");
+@BeforeMethod
+public void beforeMethod(){
+    System.out.println("beforeMethod her testten once calisir");
     //7 tane varsa 7 kere calsiir.
 }
     @BeforeSuite
@@ -37,7 +39,7 @@ public void test01() {
         System.out.println("Test 2");
     }
 
-    @Test(groups = "regression test")
+    @Test()
     public void test03() {
         System.out.println("Test 3");
     }
@@ -47,7 +49,7 @@ public void test01() {
         System.out.println("Test 4");
     }
 
-    @Test(groups = "regression test")
+    @Test()
     public void test05() {
         System.out.println("Test 5");
     }
