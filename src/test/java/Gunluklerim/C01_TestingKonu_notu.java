@@ -11,14 +11,20 @@ suite >tests>group >class>method
 3-@BeforeSuite: herbir test suitinden once bir kez  calisir.
 4-@BeforeMethod:herbir test oncesi bir kez calisir
 5-@BeforeTest:herbir test oncesi bir kez calsiir.(herbir test case oncesi degil)
-5-@AfterSuite:
-
+6-@AfterSuite:herbir test suitinden sonra bir kez  calisir.
+7-@AfterTest:herbir test sonrasi bir kez calsiir.(herbir test case oncesi degil)
+8-@BeforeGroups:Belirtilmis herhangi bir grup oncesi calisir
+9-@AfterGroups:belirtil;mis herhangi bir grup sonrasi calsiir
 
 
  */
+    @BeforeGroups
+    public void BeforeGruops(){
+        System.out.println();
+    }
     @AfterTest
     public void Aftertest(){
-        System.out.println("AfterSuite testten once calsiir");
+        System.out.println("AfterSuite testten once calisir");
     }
     @AfterSuite
     public void AfterSuite(){
