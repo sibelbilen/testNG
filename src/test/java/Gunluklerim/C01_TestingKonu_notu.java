@@ -16,6 +16,10 @@ suite >tests>group >class>method
 
 
  */
+    @AfterTest
+    public void Aftertest(){
+        System.out.println("AfterSuite testten once calsiir");
+    }
     @AfterSuite
     public void AfterSuite(){
         System.out.println("herbir test suitinden sonra bir kez  calisir.");
