@@ -6,7 +6,8 @@ public class C01_TestingKonu_notu {
 
 /*
 1-@Test:test case olusturmakicin kullanilir.
-2-
+2-@Beforeve @after:5 before 5 after annotation bulunur.
+suite >tests>group >class>method
  */
 @Test
 public void test01() {
