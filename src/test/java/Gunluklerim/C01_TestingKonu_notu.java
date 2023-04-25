@@ -1,9 +1,6 @@
 package Gunluklerim;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class C01_TestingKonu_notu {
 
@@ -12,12 +9,21 @@ public class C01_TestingKonu_notu {
 2-@Before ve @after:5 before 5 after annotation bulunur.
 suite >tests>group >class>method
 3-@BeforeSuite: herbir test suitinden once bir kez  calisir.
-4-@BeforeTest:herbir test oncesi bir kez calisiir
-5-
+4-@BeforeMethod:herbir test oncesi bir kez calisir
+5-@BeforeTest:herbir test oncesi bir kez calsiir.(herbir test case oncesi degil)
+5-@AfterSuite:
 
 
 
  */
+    @AfterSuite
+    public void AfterSuite(){
+        System.out.println("herbir test suitinden sonra bir kez  calisir.");
+    }
+    @BeforeTest
+    public void beforeTest(){
+        System.out.println("beforeTest herbir test oncesi bir kez calisir.");
+    }
 @BeforeMethod
 public void beforeMethod(){
     System.out.println("beforeMethod her testten once calisir");
