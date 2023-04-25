@@ -1,14 +1,32 @@
 package Gunluklerim;
 
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class C01_TestingKonu_notu {
 
 /*
 1-@Test:test case olusturmakicin kullanilir.
-2-@Beforeve @after:5 before 5 after annotation bulunur.
+2-@Before ve @after:5 before 5 after annotation bulunur.
 suite >tests>group >class>method
+3-@BeforeSuite: herbir test suitinden once bir kez  calisir.
+4@BeforeTest:herbir test oncesi bir kez calsiir
+
+
+
  */
+@BeforeTest
+public void beforeTest(){
+    System.out.println("beforetest her testten once calsiir");
+    //7 tane varsa 7 kere calsiir.
+}
+    @BeforeSuite
+    public void beforeSuite(){
+        System.out.println("beforeSuite hepsinden once calisir");
+        //herbir testten once calisir ancak  7 tane test varsa sadece 1 kere calsiir 7 kere calismaz.
+
+    }
 @Test
 public void test01() {
     System.out.println("Test 1");
