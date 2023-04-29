@@ -50,10 +50,17 @@ public class Driver {
     }
 
     public static void closeDriver() {
-        if (driver != null) {//if driver is pointing anywhere
-            driver.quit();//quit when I call closeDriver
+        if (driver != null) {//driver adeger atanmissa
+            driver.close();//kapat
             driver = null;//make the driver null so when we call getDriver, we can open the driver again
         }
     }
-    }
+        public static void quitDriver() {
+            if (driver != null) {//driver adeger atanmissa
+                driver.quit();//kapat
+                driver = null;//make the driver null so when we call getDriver, we can open the driver again
+            }
+        }
+
+}
 
