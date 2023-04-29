@@ -23,7 +23,8 @@ testCenterTechproPage.userName.sendKeys(ConfigReader.getProperty("kullaniciAdi")
         Assert.assertTrue(testCenterTechproPage.text.isDisplayed());
 
         //        //Sayfadan cikis yap ve cikis yapildigini test et
-
+        testCenterTechproPage.logout.click();
+        Assert.assertTrue(testCenterTechproPage.giris.isDisplayed());
 
 
     }
