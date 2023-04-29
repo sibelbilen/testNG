@@ -24,4 +24,7 @@ public BlueRentalPage(){
 
     @FindBy(xpath = "//*[@role='alert']")
     public WebElement hataMesaji;
+
+    @FindBy(xpath = "//*[@type='submit']")
+    public WebElement login2;
 }
