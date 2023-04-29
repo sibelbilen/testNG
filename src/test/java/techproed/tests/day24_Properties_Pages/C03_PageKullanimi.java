@@ -10,7 +10,10 @@ public class C03_PageKullanimi {
     public void test01() {
         ////https://testcenter.techproeducation.com/index.php?page=form-authentication
         Driver.getDriver().get(ConfigReader.getProperty("testCenterUrl"));
-        //        //Page object Model kullanarak sayfaya giriş yapildigini test edin
+
+
+
+        //Page object Model kullanarak sayfaya giriş yapildigini test edin
 
 
         //        //Sayfadan cikis yap ve cikis yapildigini test et
