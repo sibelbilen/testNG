@@ -19,9 +19,12 @@ public class C03_PageKullanimi {
         //Page object Model kullanarak sayfaya giriş yapildigini test edin
         TestCenterTechproPage testCenterTechproPage=new TestCenterTechproPage();
 testCenterTechproPage.userName.sendKeys(ConfigReader.getProperty("kullaniciAdi"),Keys.TAB,ConfigReader.getProperty("kullaniciPassword"));
-
+        testCenterTechproPage.logout.click();
         Assert.assertTrue(testCenterTechproPage.text.isDisplayed());
 
         //        //Sayfadan cikis yap ve cikis yapildigini test et
+
+
+
     }
 }
