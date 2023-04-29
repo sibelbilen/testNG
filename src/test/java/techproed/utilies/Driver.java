@@ -11,8 +11,25 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
+    /*
+    Driver class'ındaki temel mantık extends yöntemiyle değil yani TestBase class'ına extent etmek yerine
+    Driver class'ından static methodlar kullanarak driver oluştururuz. Static olduğu için class ismi ile
+    her yerden methoda ulaşabileceğiz.
+            */
+    /*
+    Singleton Pattern: Tekli kullanım kalıbı.
+        Bir class'tan obje oluşturulmasının önüne geçilmesi için kullanılan ifade
+        Bir class'tan obje oluşturmanın önüne geçmek için default constructor'ın kullanımını engellemek için
+    private access modifire kullanarak bir constructor oluştururuz
+     */
+    private Driver(){
+    }
     private static WebDriver driver;
-
+    /*
+              Driver'i her çağırdığında yeni bir pencere açılmasının önüne geçmek için
+          if bloğu içinde Eğer driver'a değer atanmamışsa(driver doluysa) değer ata, Eğer değer atanmışsa Driver'i aynı
+          sayfada RETURN et. Bunun sadece yapmamız gereken if(driver==null) kullanmak
+           */
     public static WebDriver getDriver() {
         if (driver == null) {
 
