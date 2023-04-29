@@ -15,5 +15,12 @@ public class TestCenterTechproPage {
     public WebElement userName;
 
 
+    @FindBy(xpath = "//*[@role='alert']")
+    public WebElement text;
+
+    @FindBy(xpath = "//*[text()=' Logout']")
+    public WebElement logout;
+
+
 
 }

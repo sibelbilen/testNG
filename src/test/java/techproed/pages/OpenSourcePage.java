@@ -33,4 +33,5 @@ Locate'lerimizi tek bir yerde duzenli bir sekilde tutabilmek icin;
 
     @FindBy(xpath = "//h6")
     public WebElement dashboard;
+
 }
