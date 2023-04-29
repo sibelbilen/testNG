@@ -26,6 +26,6 @@ testCenterTechproPage.userName.sendKeys(ConfigReader.getProperty("kullaniciAdi")
         testCenterTechproPage.logout.click();
         Assert.assertTrue(testCenterTechproPage.giris.isDisplayed());
 
-
+Driver.closeDriver();
     }
 }
