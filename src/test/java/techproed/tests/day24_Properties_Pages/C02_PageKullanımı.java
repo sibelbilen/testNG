@@ -1,5 +1,10 @@
 package techproed.tests.day24_Properties_Pages;
 
+import org.apache.hc.core5.util.Asserts;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 import techproed.pages.OpenSourcePage;
 import techproed.utilies.ConfigReader;
@@ -28,5 +33,7 @@ openSourcePage.password.sendKeys(ConfigReader.getProperty("password"));
 openSourcePage.login.click();
 
         //Login Testini basarili oldugunu test et
+
+        Assert.assertTrue(openSourcePage.dashboard.isDisplayed());
     }
 }
