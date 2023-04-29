@@ -1,6 +1,7 @@
 package techproed.tests.day24_Properties_Pages;
 
 import org.testng.annotations.Test;
+import techproed.pages.OpenSourcePage;
 import techproed.utilies.ConfigReader;
 import techproed.utilies.Driver;
 
@@ -20,9 +21,11 @@ public class C02_PageKullanımı {
 
         //kullaniciAdi, kullaniciSifre, submitButton elementlerini bul
 
+        OpenSourcePage openSourcePage=new OpenSourcePage();
 
-
-
+openSourcePage.username.sendKeys(ConfigReader.getProperty("username"));
+openSourcePage.password.sendKeys(ConfigReader.getProperty("password"));
+openSourcePage.login.click();
 
         //Login Testini basarili oldugunu test et
     }
