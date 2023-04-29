@@ -16,8 +16,15 @@ public class PositiveTest {
         Admin email: jack@gmail.com
         Admin password: 12345
          */
+
+
         Driver.getDriver().get(ConfigReader.getProperty("blueRentACarUrl"));
         BlueRentalPage blueRentalPage=new BlueRentalPage();
         blueRentalPage.login.click();
+
+
+
+
+
     }
 }
