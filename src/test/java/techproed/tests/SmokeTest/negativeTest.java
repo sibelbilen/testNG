@@ -1,6 +1,7 @@
 package techproed.tests.SmokeTest;
 
 import org.openqa.selenium.Keys;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.BlueRentalPage;
 import techproed.utilies.ConfigReader;
@@ -27,7 +28,7 @@ public class negativeTest {
         blueRentalPage.email.sendKeys(ConfigReader.getProperty("fakeEmail"),
                 Keys.TAB,ConfigReader.getProperty("fakepass"),Keys.ENTER);
 
-
+        Assert.assertTrue(blueRentalPage.hataMesaji.isDisplayed());
 
     }
 }

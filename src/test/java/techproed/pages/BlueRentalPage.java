@@ -21,4 +21,7 @@ public BlueRentalPage(){
 
     @FindBy(id = "dropdown-basic-button")
     public WebElement verify;
+
+    @FindBy(xpath = "//*[@role='alert']")
+    public WebElement hataMesaji;
 }
