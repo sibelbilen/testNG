@@ -37,6 +37,11 @@ public class Driver {
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     break;
+                default:
+
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                    break;
             }
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
