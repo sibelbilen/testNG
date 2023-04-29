@@ -1,5 +1,7 @@
 package techproed.tests.SmokeTest;
 
+import org.openqa.selenium.Keys;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.pages.BlueRentalPage;
 import techproed.utilies.ConfigReader;
@@ -23,7 +25,9 @@ public class PositiveTest {
         blueRentalPage.login.click();
 
 
-
+        blueRentalPage.email.sendKeys(ConfigReader.getProperty("email"),
+                Keys.TAB,ConfigReader.getProperty("pass"),Keys.ENTER);
+        Assert.assertEquals(blueRentalPage.verify.getText(),"Jack Nicholson");
 
 
     }
