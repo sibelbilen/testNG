@@ -8,8 +8,8 @@ public class C01_ClassWork {
     @Test
     public void testName() {
         Driver.getDriver().get(ConfigReader.getProperty("amazon_url"));
-
-
+Driver.closeDriver();
+Driver.getDriver().get(ConfigReader.getProperty("techproeducation_url"));
 
 
 
