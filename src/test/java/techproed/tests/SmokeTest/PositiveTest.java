@@ -1,6 +1,9 @@
 package techproed.tests.SmokeTest;
 
 import org.testng.annotations.Test;
+import techproed.pages.BlueRentalPage;
+import techproed.utilies.ConfigReader;
+import techproed.utilies.Driver;
 
 public class PositiveTest {
 
@@ -13,5 +16,8 @@ public class PositiveTest {
         Admin email: jack@gmail.com
         Admin password: 12345
          */
+        Driver.getDriver().get(ConfigReader.getProperty("blueRentACarUrl"));
+        BlueRentalPage blueRentalPage=new BlueRentalPage();
+        blueRentalPage.login.click();
     }
 }
