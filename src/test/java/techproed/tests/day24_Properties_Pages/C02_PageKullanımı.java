@@ -34,6 +34,6 @@ openSourcePage.login.click();
 
         //Login Testini basarili oldugunu test et
         Assert.assertTrue(openSourcePage.dashboard.isDisplayed());
-
+Driver.closeDriver();
     }
 }
