@@ -20,9 +20,10 @@ public class C03_BlueRentalExcelTest2 {
        //sayfaya gidelim
         Driver.getDriver().get(ConfigReader.getProperty("blueRentACarUrl"));
         //bir loopolusturup excel dosyasindaki tum verileri girelim.
-        for (int i = 1; i <excelUtils.rowCount() ; i++) {//i'yi 1 den baslattik cunku veriler 1.satirdan basliyor.
+        for (int i = 1; i <=excelUtils.rowCount() ; i++) {//i'yi 1 den baslattik cunku veriler 1.satirdan basliyor.
         String email=excelUtils.getCellData(i,0) ;
-
+String password=excelUtils.getCellData(i,1);
+            System.out.println(email+">--->"+password);
         }
     }
 }
