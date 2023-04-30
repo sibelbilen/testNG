@@ -16,13 +16,25 @@ public class C04_DataProvider {
     bir method olusturulur.
      */
 
-    @DataProvider
-    public static Object[][] urunler() {
-        return new Object[][]{{"Volvo"},{"Audi"},{"Honda"},{"Toyoto"},{"opel"},{"BMW"}};
-    }
+    /*
+  Eğer farklı bir test methodu için aynı dataProvider methodu kullanılacaksa
+  @DataProvider(name = "googleTest") şeklinde dataprovider notasyonundan sonra name paremetresine yeni olusturduğumuz
+  methodun adını yazarız
+   */
     @Test(dataProvider = "urunler")
-    public void testdataprovider(String data){
-     //Data providerdaki verileri alabilmek icin Test methodumuza String bir parametre atamasi yapariz.
+    public void testdataprovider(String data) {//DataP.'daki verileri alabilmek için
+        // Test methodumuza String bir parametre ataması yaparız
         System.out.println(data);
+    }
+    @DataProvider(name = "googleTest")
+    public static Object[][] urunler() {
+        return new Object[][]{{"Volvo"},{"Mercedes"},{"Audi"},{"Honda"},{"Toyota"},{"Opel"},{"BMW"}};
+    }
+    @Test
+    public void googleTest(String araclar) {
+        //Google sayfasına gidiniz
+
+        //{"Volvo"},{"Mercedes"},{"Audi"},{"Honda"},{"Toyota"},{"Opel"},{"BMW"} araçları aratınız
+        //Her aratmadan sonra sayfa resmi alınız
     }
 }
