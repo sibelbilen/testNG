@@ -31,15 +31,19 @@ public class negativeTest {
         Error:
         User with email fake@bluerentalcars.com not found
          */
-            Driver.getDriver().get(ConfigReader.getProperty("blueRentACarUrl"));
-            BlueRentalPage blueRentalPage = new BlueRentalPage();
-            blueRentalPage.login.click();
-            blueRentalPage.email.sendKeys(ConfigReader.getProperty("fakeEmail"),
-                    Keys.TAB,ConfigReader.getProperty("fakepass"));
-            blueRentalPage.login2.click();
-            ReusableMethods.bekle(3);
-            Assert.assertTrue(blueRentalPage.hataMesaji.isDisplayed());
-            Driver.closeDriver();
+
+
+                Driver.getDriver().get(ConfigReader.getProperty("blueRentACarUrl"));
+                BlueRentalPage blueRentalPage = new BlueRentalPage();
+                blueRentalPage.login.click();
+                blueRentalPage.email.sendKeys(ConfigReader.getProperty("fakeEmail"),
+                        Keys.TAB,ConfigReader.getProperty("fakepass"));
+                blueRentalPage.login2.click();
+                ReusableMethods.bekle(3);
+                ReusableMethods.tumSayfaResmi();
+                Assert.assertTrue(blueRentalPage.hataMesaji.isDisplayed());
+                Driver.closeDriver();
+            }
         }
-    }
+
 
