@@ -1,7 +1,12 @@
 package techproed.tests.day25_ExcelUtils;
 
+import org.openqa.selenium.Keys;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import techproed.pages.GooglePage;
+import techproed.utilies.ConfigReader;
+import techproed.utilies.Driver;
+import techproed.utilies.ReusableMethods;
 
 public class C04_DataProvider {
 
@@ -28,13 +33,22 @@ public class C04_DataProvider {
     }
     @DataProvider(name = "googleTest")
     public static Object[][] urunler() {
-        return new Object[][]{{"Volvo"},{"Mercedes"},{"Audi"},{"Honda"},{"Toyota"},{"Opel"},{"BMW"}};
+        return new Object[][]{{"Volvo"}, {"Mercedes"}, {"Audi"}, {"Honda"}, {"Toyota"}, {"Opel"}, {"BMW"}};
     }
-    @Test
+    @Test(dataProvider = "googleTest")
     public void googleTest(String araclar) {
         //Google sayfasına gidiniz
-
+        //Driver.getDriver().get("https://google.com");
+        Driver.getDriver().get(ConfigReader.getProperty("googleUrl"));
         //{"Volvo"},{"Mercedes"},{"Audi"},{"Honda"},{"Toyota"},{"Opel"},{"BMW"} araçları aratınız
+        GooglePage googlePage = new GooglePage();
+        googlePage.aramaKutusu.sendKeys(araclar, Keys.ENTER);
         //Her aratmadan sonra sayfa resmi alınız
+        ReusableMethods.tumSayfaResmi();
+        ReusableMethods.bekle(2);
+        Driver.closeDriver();
     }
-}
+
+
+    }
+
