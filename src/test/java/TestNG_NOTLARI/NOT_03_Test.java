@@ -16,7 +16,7 @@ public class NOT_03_Test {
     /*
 
     @Before ve @After: 5 Before ve 5 After annotation bulunur.
-    suite > tests > group > class > method
+    suite > tests > gr > class > method
     @BeforeSuite: Herbir test suitinden önce bir kez çalışır.
     @AfterSuite: Herbir test suitinden sonra bir kez çalışır.
     @BeforeTest: Herbir test öncesi bir kez çalışır.(Herbir test case'i öncesi değil!!!)
