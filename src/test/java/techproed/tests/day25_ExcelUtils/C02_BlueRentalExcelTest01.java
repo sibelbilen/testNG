@@ -10,7 +10,7 @@ import techproed.utilies.ExcelUtils;
 
 import java.io.FileNotFoundException;
 
-public class C02_BlueRentalExcelTest {
+public class C02_BlueRentalExcelTest01 {
     /*
 Eğer bir veriyi(datayı) .properties dosyasından almak istiyorsak, ConfigReader class'ından getProperty() methodunu
 kullanarak .properties dosyamıza girdiğimiz key değerini belirtiriz ve bize bu key değerinin value sunu döndürür.
