@@ -40,11 +40,11 @@ public class ExcelUtils {
 
     //============Exceldeki datalari 2 boyutlu array seklinde alir===
     public String[][] getDataArray() {
-        String[][] data = new String[rowCount()][columnCount()];
-        for (int i = 0; i < rowCount(); i++) {
+        String[][] data = new String[rowCount()-1][columnCount()];
+        for (int i = 1; i < rowCount(); i++) {
             for (int j = 0; j < columnCount(); j++) {
                 String value = getCellData(i, j);
-                data[i][j] = value;
+                data[i-1][j] = value;
             }
         }
         return data;
@@ -85,15 +85,16 @@ public class ExcelUtils {
     }
 
     //    Exceldeki datalari basliksiz olarak 2 boyutlu array seklinde return eder
+
+    //Baslıksız tum exceldeki verileri iki boyutlu arraye koyarak alir.
     public String[][] getDataArrayWithoutFirstRow() {
-        String[][] data = new String[rowCount()-1][columnCount()];
+        String[][] data = new String[rowCount() - 1][columnCount()];
         for (int i = 1; i < rowCount(); i++) {
             for (int j = 0; j < columnCount(); j++) {
                 String value = getCellData(i, j);
-                data[i-1][j] = value;
+                data[i - 1][j] = value;
             }
         }
         return data;
     }
-
 }//class
