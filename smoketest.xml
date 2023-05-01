@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Blue Rental Car Smoke Test " verbose="1" >
+    <test name="Smoke Test"   >
+        <packages>
+            <package name="techproed.tests.day24_Properties_Pages.C04_SmokeTest" />
+        </packages>
+    </test>
+</suite>

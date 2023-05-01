@@ -17,5 +17,8 @@ public class C02_DataProviderTest2 {
     public void test02(String username,String password) {
 
         System.out.println("kullanici ad : "+ " Sifre :  "+password);
+
     }
+
+
 }
