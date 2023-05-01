@@ -26,7 +26,7 @@ public class C04_DataProvider {
   @DataProvider(name = "googleTest") şeklinde dataprovider notasyonundan sonra name paremetresine yeni olusturduğumuz
   methodun adını yazarız
    */
-    @Test(dataProvider = "urunler")
+    @Test(dataProvider = "googleTest")
     public void testdataprovider(String data) {//DataP.'daki verileri alabilmek için
         // Test methodumuza String bir parametre ataması yaparız
         System.out.println(data);
