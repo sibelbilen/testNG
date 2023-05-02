@@ -3,7 +3,11 @@
 <suite name="Blue Rental Car Smoke Test " verbose="1" >
     <test name="Smoke Test"   >
         <packages>
+            <!-- name değeri geçerli bir package olmalıdır-->
+            <!-- package root dosyasından başlamalıdır==> "techproed"-->
+            <!-- Çalıştırmadan önce savAll yada ctrl+s yapınız-->
             <package name="techproed.tests.day24_Properties_Pages.C04_SmokeTest" />
+            <package name="techproed.tests.day26_DataProvider" />
         </packages>
     </test>
 </suite>
