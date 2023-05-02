@@ -13,6 +13,8 @@ import java.util.List;
 
 public class C01_WebTables {
     @Test
+
+    //Bu classta her method bağımsız  bir driver objesi üretmektedir. Parelel çalışırken başka metholara bağımlılık olmayacaktır.
     public void table1Print() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
