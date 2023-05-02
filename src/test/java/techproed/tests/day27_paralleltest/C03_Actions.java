@@ -23,11 +23,7 @@ public class C03_Actions {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
         driver.get("https://techproeducation.com/");
-        try {
-            driver.findElement(By.cssSelector("i[class='eicon-close']")).click();
-        }catch (Exception ignored){
 
-        }
 
 
         WebElement search = driver.findElement(By.xpath("//*[@type='search']"));
@@ -36,7 +32,7 @@ public class C03_Actions {
                 sendKeys("techpro").
                 keyUp(Keys.SHIFT).//shift tuşuna basma işlemi sonlanır
                 sendKeys(" education",Keys.ENTER).perform();
-        bekle(3);
+
 
         WebElement richmondCollege = driver.findElement(By.xpath("(//h3//a)[9]"));
 
