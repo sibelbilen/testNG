@@ -1,4 +1,4 @@
-package techproed.tests;
+package techproed.tests.day_23;
 
 import org.testng.annotations.Test;
 import techproed.utilies.ConfigReader;

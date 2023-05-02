@@ -1,4 +1,4 @@
-package techproed.tests;
+package techproed.tests.day_23;
 
 import org.apache.hc.core5.util.Asserts;
 import org.testng.Assert;
