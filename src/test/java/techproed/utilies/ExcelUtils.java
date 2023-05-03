@@ -10,16 +10,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExcelUtils {
+    //privite neden yaptik -->sadece bu class icinde kullanabilmek icin
     private Workbook workbook;
     private Sheet sheet;
     private String path;
     //Constructor: Excel path'ine ve Excel'deki sayfaya ulaşmak için 2 parametreli cons. oluşturduk
     public ExcelUtils(String path,String sheetName){
-        this.path = path;//ir path verilecekse bu classtaki path'i kullan
+        this.path = path;//bir path verilecekse bu classtaki path'i kullan
         try {
-            FileInputStream fis = new FileInputStream(path);
-            workbook = WorkbookFactory.create(fis);
-            sheet = workbook.getSheet(sheetName);
+            FileInputStream fis = new FileInputStream(path);//dosya yolunu akisa aldik
+            workbook = WorkbookFactory.create(fis);//excelde okumasi icin workbook objesine atama yaptik
+            sheet = workbook.getSheet(sheetName);//path classindan sayfa ismi
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -22,6 +22,7 @@ public class C01_ExcelTest1 {
         String password = excelUtilss.getCellData(1,1);
         System.out.println(email+" || "+password);
         System.out.println(excelUtilss.columnCount());//sutun sayisini verir
+
     }
 
 }
