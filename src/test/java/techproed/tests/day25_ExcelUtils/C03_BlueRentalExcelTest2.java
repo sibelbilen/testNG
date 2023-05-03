@@ -25,6 +25,7 @@ public class C03_BlueRentalExcelTest2 {
         BlueRentalPage blueRentalPage = new BlueRentalPage();
         //Bir loop oluşturup excel dosyasındaki tüm verileri girdirelim
         for (int i = 1; i <= excelUtils.rowCount(); i++) {//i'yi 1 den başlattık çünkü veriler 1. satırdan başlıyor
+            //baslik 0 oldugu icin 1 den basladik
             String mail = excelUtils.getCellData(i,0);
             String password = excelUtils.getCellData(i,1);
             System.out.println(mail+" || "+password);

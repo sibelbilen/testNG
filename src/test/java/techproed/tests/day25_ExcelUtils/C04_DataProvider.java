@@ -9,7 +9,7 @@ import techproed.utilies.Driver;
 import techproed.utilies.ReusableMethods;
 
 public class C04_DataProvider {
-
+//-----------------------NOTE-01---------------------------------
     /*
    -- DataProvider , bir cok veriyi test caselere loop kullanmadan aktarmak icin kullanilir.
     TestNG'den gelen bir ozelliktir.
@@ -20,6 +20,10 @@ public class C04_DataProvider {
     ve string bir isim belirtilir.Bu belirttigimiz isimle @DataProvider notasyonu ile
     bir method olusturulur.
      */
+
+
+  //-------------------NOTE-02------------------------------------
+
 
     /*
   Eğer farklı bir test methodu için aynı dataProvider methodu kullanılacaksa
