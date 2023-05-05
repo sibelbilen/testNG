@@ -4,10 +4,11 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.ITestListener;
 import org.testng.SkipException;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import techproed.utilies.ConfigReader;
 import techproed.utilies.Driver;
-
+@Listeners(techproed.utilies.Listeners.class)
 public class C01_ListenersTest1  {
        /*
     Bir class'ta listeners kullanabilmek için class'dan önce @Listeners notasyonu eklememiz gerekir.
