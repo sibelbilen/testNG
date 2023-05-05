@@ -49,4 +49,5 @@ public class Listeners implements ITestListener {
     public void onTestSkipped(ITestResult result) {
         System.out.println("onTestSkipped-->SKIP yapilan testlerden sonra tek bir sefer cagrilir."+result.getName());
     }
+
 }
