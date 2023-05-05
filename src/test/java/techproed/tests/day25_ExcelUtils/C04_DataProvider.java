@@ -30,17 +30,19 @@ public class C04_DataProvider {
   @DataProvider(name = "googleTest") şeklinde dataprovider notasyonundan sonra name paremetresine yeni olusturduğumuz
   methodun adını yazarız
    */
+    @DataProvider(name = "googleTest")
+    public static Object[][] urunler() {
+        return new Object[][]{{"Volvo"}, {"Mercedes"}, {"Audi"}, {"Honda"}, {"Toyota"}, {"Opel"}, {"BMW"}};
+    }
+
     @Test(dataProvider = "googleTest")
     public void testdataprovider(String data) {//DataP.'daki verileri alabilmek için
         // Test methodumuza String bir parametre ataması yaparız
         System.out.println(data);
     }
-    @DataProvider(name = "googleTest")
-    public static Object[][] urunler() {
-        return new Object[][]{{"Volvo"}, {"Mercedes"}, {"Audi"}, {"Honda"}, {"Toyota"}, {"Opel"}, {"BMW"}};
-    }
+
     @Test(dataProvider = "googleTest")
-    public void googleTest(String araclar) {
+    public void googleTest(String araclar) {//
         //Google sayfasına gidiniz
         //Driver.getDriver().get("https://google.com");
         Driver.getDriver().get(ConfigReader.getProperty("googleUrl"));
