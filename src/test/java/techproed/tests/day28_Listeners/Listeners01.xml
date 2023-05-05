@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <listeners>
+        <listener class-name="techproed.utilies.Listeners">
+
+        </listener>
+    </listeners>
     <test verbose="2" preserve-order="true"
           name="C:/Users/Casper/IdeaProjects/B129TestNGProject/src/test/java/techproed/tests/day28_Listeners/C02_ListenersTest2.java">
         <classes>
@@ -15,3 +20,7 @@
         </classes>
     </test>
 </suite>
+
+        <!-- Listeners'i .xml file ile farklı method ve classlar için kullanmak istersek
+        suite tag'indan sonra listeners tag'i sonrasında listener tag'i ile utilities altında oluşturduğumuz Listeners class'inin
+        yolunu belirtiriz-->
