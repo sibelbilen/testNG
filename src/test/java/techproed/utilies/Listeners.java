@@ -1,10 +1,11 @@
 package techproed.utilies;
 
+import org.testng.IRetryAnalyzer;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class Listeners implements ITestListener {
+public class Listeners implements ITestListener, IRetryAnalyzer {
 
     //-------------------nOTE-----------------------
 
@@ -48,6 +49,21 @@ public class Listeners implements ITestListener {
     @Override
     public void onTestSkipped(ITestResult result) {
         System.out.println("onTestSkipped-->SKIP yapilan testlerden sonra tek bir sefer cagrilir."+result.getName());
+    }
+    /*
+    Bu sınıf sadece FAIL olan test case'leri tekrar çalıştırır
+    maxRetryCount ek olarak çalisma sayısıdır. Bu örnekte Fail olan test (maxRetryCount = 1) normal bir kere
+    çalıştıktan sonra fail olursa 1 kez daha çalışacaktır.
+     */
+    private int retryCount = 0;
+    private static final int maxRetryCount = 2;
+    @Override
+    public boolean retry(ITestResult result) {
+        if (retryCount < maxRetryCount) {
+            retryCount++;
+            return true;
+        }
+        return false;
     }
 
 }
