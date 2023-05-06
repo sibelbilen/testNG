@@ -4,6 +4,10 @@ import org.testng.IRetryAnalyzer;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.annotations.ITestAnnotation;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
 public class Listeners implements ITestListener, IRetryAnalyzer {
 
@@ -18,45 +22,39 @@ public class Listeners implements ITestListener, IRetryAnalyzer {
      */
 
     @Override
-    public void onStart(ITestContext context) {//beforeClass gibi
-        System.out.println(" onStart --> methodu tum testlerden once tek bir sefer cagirilir"+context.getName());//context.getName() :tum test calistigina testin ismini verir.
-        //CONTEXT.GETNAME YAPIYORUZ CONTEXT PARAMETRE ISMI OLDUGU ICIN BU ISIM DEGISEBILIR.
-
-
+    public void onStart(ITestContext context) {//@BeforeClass gibi
+        System.out.println("onStart Methodu -> Tüm testlerden önce tek bir sefer çağrılır " + context.getName());
     }
-
 
     @Override
     public void onFinish(ITestContext context) {
-        System.out.println("onFinish --> tum testlerden sonra tek bir sfer cagrilir."+context.getName());
+        System.out.println("onFinish Methodu -> Tüm testlerden sonra tek bir sefer çağrılır " + context.getName());
     }
 
     @Override
-    public void onTestStart(ITestResult result) {//beforecalss gibi
-        System.out.println("onTestStart --> her bir testten once tek bir kere calisir."+result.getName());
+    public void onTestStart(ITestResult result) {//@Before gibi
+        System.out.println("onTestStart Methodu -> Her bir test'ten önce tek bir sefer çağrılır " + result.getName());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        System.out.println("onTestSuccess --> PASSED olan testlerden sonra tek bir sefer cagrilir."+result.getName());
+        System.out.println("onTestSuccess Methodu -> PASSED olan testlerden sonra tek bir sefer çağrılır " + result.getName());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println("onTestFailure--> FAILED olan testlerden sonra tek bir sefer calisir"+result.getName());
+        System.out.println("onTestFailure Methodu -> FAILED olan testlerden sonra tek bir sefer çağrılır " + result.getName());
+        ReusableMethods.tumSayfaResmi(result.getName());
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        System.out.println("onTestSkipped-->SKIP yapilan testlerden sonra tek bir sefer cagrilir."+result.getName());
+        System.out.println("onTestSkipped Methodu -> SKIP(atlanan) olan testlerden sonra tek bir sefer çağrılır " + result.getName());
     }
-    /*
-    Bu sınıf sadece FAIL olan test case'leri tekrar çalıştırır
-    maxRetryCount ek olarak çalisma sayısıdır. Bu örnekte Fail olan test (maxRetryCount = 1) normal bir kere
-    çalıştıktan sonra fail olursa 1 kez daha çalışacaktır.
-     */
+
     private int retryCount = 0;
-    private static final int maxRetryCount = 2;
+    private static final int maxRetryCount = 1;
+
     @Override
     public boolean retry(ITestResult result) {
         if (retryCount < maxRetryCount) {
@@ -66,4 +64,19 @@ public class Listeners implements ITestListener, IRetryAnalyzer {
         return false;
     }
 
+    /*
+    Bu method sadece FAIL olan test case'leri tekrar çalıştırır
+    maxRetryCount ek olarak çalisma sayısıdır. Bu örnekte Fail olan test (maxRetryCount = 1) normal bir kere
+    çalıştıktan sonra fail olursa 1 kez daha çalışacaktır.
+     */
+
+    public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
+        /*
+            Bu methodun amacı; test notasyonlarını, sınıfları, cons.ları ve methodları transform(dönüştürme) etmemize
+        olanak sağlar
+            Bu method sayesinde Listeners sınıfını .xml dosyasında kullanabileceğiz ve istediğimiz class'ları fail
+        olma durumunda listeners sınıfı retry methodunu kullanarak istediğimiz kadar tekrar çalıştırabileceğiz.
+         */
+        annotation.setRetryAnalyzer(Listeners.class);
+    }
 }
