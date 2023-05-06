@@ -34,6 +34,7 @@ methodları kullanarak istediğimiz veriyi alabiliriz.
         //Excel'den aldığımız verileri sendKeys() methodu ile gönderdik
         //Login oldugumuzu dogrulyalım.
         Assert.assertTrue(blueRentalPage.verify.isDisplayed());
+
     }
     }
 
