@@ -12,7 +12,7 @@ public class ListenersRetry implements IRetryAnalyzer {
     çalıştıktan sonra fail olursa 1 kez daha çalışacaktır.
      */
         private int retryCount = 0;
-        private static final int maxRetryCount = 2;
+        private static final int maxRetryCount = 1;//fail olduktan sonra tekrar sayisi
         @Override
         public boolean retry(ITestResult result) {
             if (retryCount < maxRetryCount) {

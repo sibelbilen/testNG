@@ -23,7 +23,11 @@ public class Listeners implements ITestListener, IRetryAnalyzer {
 
     @Override
     public void onStart(ITestContext context) {//@BeforeClass gibi
-        System.out.println("onStart Methodu -> Tüm testlerden önce tek bir sefer çağrılır " + context.getName());
+        System.out.println("onStart Methodu -> Tüm testlerden önce tek bir sefer çağrılır(classtan once) " + context.getName());
+        //ITestContext context bu hangi classta icerigi demek
+        //baslangic methodudur.
+        //ITestContext overrid ediyor
+        //java 8 den sonra interfacelere bodysi olan method koyabiliyoruz.interfacelere defualt method koyabiliriz.
     }
 
     @Override

@@ -8,6 +8,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import techproed.utilies.ConfigReader;
 import techproed.utilies.Driver;
+//listeners classin basina nerede oldugunu soyleyecegiz
 @Listeners(techproed.utilies.Listeners.class)
 public class C01_ListenersTest1  {
        /*
