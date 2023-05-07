@@ -13,6 +13,7 @@ public class C03_ListenersTest3 {
       Test class'ımızda fail olma durumu olan bir testin listeners ile tekrar çalışmasını istersek
   @Test notasyanundan sonra parametre olarak retryAnalyzer yazar ve oluşturmuş olduğumuz ListenersRetry class'ının
   yolunu belirtiriz.
+  //ilk failde skip veriyor yani ignored yapiyor ikinci failde sonucu veriyor iki kez calistiyor sayiya bagli
    */
     @Test(retryAnalyzer = techproed.utilies.ListenersRetry.class)
     public void test1() {
