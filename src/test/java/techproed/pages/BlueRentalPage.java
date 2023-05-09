@@ -34,4 +34,7 @@ public BlueRentalPage(){
     public WebElement logout;
     @FindBy(xpath = "//*[text()='OK']")
     public WebElement ok;
+
+@FindBy(xpath = "//div[@id='ypu53oq54']")
+    public WebElement negatifHataMesaji;
 }

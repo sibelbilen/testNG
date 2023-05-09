@@ -27,7 +27,7 @@ Customer password: fakepass
         blueRentalPage.email.sendKeys(ConfigReader.getProperty("fakeEmail"),Keys.TAB,ConfigReader.getProperty("fakepass"),Keys.ENTER);
 
         blueRentalPage.login2.click();
-       Assert.assertTrue(blueRentalPage.hataMesaji.isDisplayed());
+    Assert.assertTrue(blueRentalPage.negatifHataMesaji.isDisplayed());
 
 
 
